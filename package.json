@@ -1,0 +1,31 @@
+{
+  "name": "jeopardy-mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmyko360/jeopardy-mvp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmyko360/jeopardy-mvp/issues"
+  },
+  "homepage": "https://github.com/jimmyko360/jeopardy-mvp#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15",
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "nodemon": "^2.0.7",
+    "webpack": "^5.21.2"
+  }
+}
