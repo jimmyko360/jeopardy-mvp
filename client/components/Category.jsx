@@ -1,5 +1,6 @@
-import React from 'react'
-import Question from './Question.jsx'
+import React from 'react';
+import CategoryName from './CatName.jsx';
+import Question from './Question.jsx';
 
 class Category extends React.Component {
   constructor(props) {
@@ -9,8 +10,10 @@ class Category extends React.Component {
   render() {
     return (
       <div>
-        Map of questions here
-        <Question/>
+        <CategoryName title={this.props.category.title}/>
+        {this.props.category.clues.map((clue) => {
+          return <Question key={clue.id} clue={clue}/>
+        })}
       </div>
     )
   }

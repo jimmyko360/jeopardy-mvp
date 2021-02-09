@@ -7,7 +7,7 @@ class App extends React.Component {
     super()
     this.state = {
       categoryIds: [],
-      categoryInfo: {}
+      categoryInfo: []
     }
   }
 
@@ -22,7 +22,6 @@ class App extends React.Component {
     })
     .then((ids) => {
       let categoryInfo = ids.map((categoryId) => {
-        console.log(categoryId)
         return axios.get(`http://jservice.io/api/category?id=${categoryId}`)
       })
       Promise.all(categoryInfo)
@@ -37,25 +36,16 @@ class App extends React.Component {
     .catch((err)=>{throw(err)})
   }
 
-  async getCategoryInfo() {
-    let categoryPromises = this.state.categoryIds.map((categoryId) => {
-      return axios.get(`http://jservice.io/api/category?id=${categoryId}`)
-    })
-    let resolvedCategories = await Promise.all(categoryPromises);
-    this.setState({categoryInfo: resolvedCategories})
-  }
-
-
   componentDidMount() {
     this.getCategoryIds();
-    // this.getCategoryInfo();
   }
 
   render() {
     return (
       <div>
-        Hello World its me
-        <Category/>
+        {this.state.categoryInfo.map((category) => {
+          return <Category key={category.id} category={category}/>
+        })}
       </div>
     )
   }
