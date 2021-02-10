@@ -1,13 +1,13 @@
+#title {
+  border-bottom: 20px solid black;
+}
 .cell {
   font-size: 40px;
   background-color: rgb(0, 0, 201);
   color: white;
   height: 150px;
   width: 250px;
-  border: 3px solid black;
-  border-radius: 8px;
-  margin: 10px;
-  padding: 10px;
+  border: 10px solid black;
   word-wrap: normal;
   word-break: normal;
 
@@ -16,6 +16,7 @@
     #question {
 
     }
+
     #answer {
 
     }

@@ -1,5 +1,13 @@
 body {
   text-align: center;
+  font-family: Helvetica, Sans-Serif;
+  font-weight: bolder;
+  font-stretch: semi-condensed;
+  align-items: center;
   // overflow: auto;
   // white-space: nowrap;
+
+  .app {
+    border: 40px solid gray;
+  }
 }
