@@ -1,0 +1,31 @@
+body {
+  #app {
+    .app {
+      .category {
+        .cell {
+          overflow-wrap: normal;
+          font-size: 40px;
+          word-wrap: normal;
+          background-color: rgb(0, 0, 201);
+          color: white;
+          height: 150px;
+          width: 250px;
+          border: 3px solid black;
+          border-radius: 8px;
+          margin: 10px;
+          padding: 10px;
+
+          .question .answer {
+            overflow-wrap: normal;
+            word-wrap: normal;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+}

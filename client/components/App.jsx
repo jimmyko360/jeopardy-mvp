@@ -29,7 +29,7 @@ class App extends React.Component {
         let categories = categoryPromiseArray.map((category) => {
           return category.data
         })
-        this.setState({categoryInfo: categories.slice(0,4)})
+        this.setState({categoryInfo: categories})
       })
       .catch((err) => {throw(err)})
     })
@@ -42,9 +42,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         {this.state.categoryInfo.map((category) => {
-          return <Category key={category.id} category={category}/>
+          return <Category
+          key={category.id}
+          category={category}
+          />
         })}
       </div>
     )

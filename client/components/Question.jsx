@@ -27,24 +27,24 @@ class Question extends React.Component {
 
   render() {
       return (
-        <div>
+        <div className="cell">
+          <button className="show-hide" onClick={this.hideClue}>X</button>
           {this.state.displayClue ?
             <div>
-            <div onClick={this.showQuestion}>
+            <div className="question" onClick={this.showQuestion}>
               {this.state.displayQuestion ?
                 this.props.clue.question
                 : this.props.clue.value}
             </div>
 
-            <div>
+            <div className="answer">
               {this.state.displayAnswer ?
                 this.props.clue.answer
               : null  }
             </div>
-            <button onClick={this.showAnswer}>Show Answer</button>
+            <button className="show-answer" onClick={this.showAnswer}>Show Answer</button>
           </div>
           : null}
-          <button onClick={this.hideClue}>X</button>
         </div>
     )
   }

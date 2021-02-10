@@ -9,7 +9,7 @@ class Category extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="category">
         <CategoryName title={this.props.category.title}/>
         {this.props.category.clues.map((clue) => {
           return <Question key={clue.id} clue={clue}/>
