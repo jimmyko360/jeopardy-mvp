@@ -30,16 +30,16 @@ class Question extends React.Component {
         <div className="cell">
           <button className="show-hide" onClick={this.hideClue}>X</button>
           {this.state.displayClue ?
-            <div>
-            <div className="question" onClick={this.showQuestion}>
+            <div className="clue">
+            <div id="question" onClick={this.showQuestion}>
               {this.state.displayQuestion ?
-                this.props.clue.question
+                this.props.clue.question.toUpperCase()
                 : this.props.clue.value}
             </div>
 
-            <div className="answer">
+            <div id="answer">
               {this.state.displayAnswer ?
-                this.props.clue.answer
+                this.props.clue.answer.toUpperCase()
               : null  }
             </div>
             <button className="show-answer" onClick={this.showAnswer}>Show Answer</button>

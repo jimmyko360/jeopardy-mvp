@@ -3,7 +3,7 @@ import Question from './Question.jsx';
 
 let CategoryName = (props) => {
     return (
-      <div className="cell title">
+      <div className="cell" id="title">
         {props.title.toUpperCase()}
       </div>
     )
