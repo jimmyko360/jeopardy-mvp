@@ -28,21 +28,24 @@ class Question extends React.Component {
   render() {
       return (
         <div className="cell">
-          <button className="show-hide" onClick={this.hideClue}>X</button>
+          <button className="show-hide material-icons md-24" onClick={this.hideClue}>highlight_off</button>
+
+
           {this.state.displayClue ?
             <div className="clue">
             <div id="question" onClick={this.showQuestion}>
               {this.state.displayQuestion ?
                 this.props.clue.question.toUpperCase()
-                : this.props.clue.value}
+                : '$' + this.props.clue.value}
             </div>
 
             <div id="answer">
               {this.state.displayAnswer ?
                 this.props.clue.answer.toUpperCase()
-              : null  }
+
+                : null }
+                <button className="show-answer material-icons md-24" onClick={this.showAnswer}>check_circle_outline</button>
             </div>
-            <button className="show-answer" onClick={this.showAnswer}>Show Answer</button>
           </div>
           : null}
         </div>
