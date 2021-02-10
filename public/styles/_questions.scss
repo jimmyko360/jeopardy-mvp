@@ -1,31 +1,23 @@
-body {
-  #app {
-    .app {
-      .category {
-        .cell {
-          overflow-wrap: normal;
-          font-size: 40px;
-          word-wrap: normal;
-          background-color: rgb(0, 0, 201);
-          color: white;
-          height: 150px;
-          width: 250px;
-          border: 3px solid black;
-          border-radius: 8px;
-          margin: 10px;
-          padding: 10px;
+.cell {
+  font-size: 40px;
+  background-color: rgb(0, 0, 201);
+  color: white;
+  height: 150px;
+  width: 250px;
+  border: 3px solid black;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+  word-wrap: normal;
+  word-break: normal;
 
-          .question .answer {
-            overflow-wrap: normal;
-            word-wrap: normal;
-            font-size: 20px;
-          }
-        }
-      }
+  .clue {
+    font-size: 20px;
+    #question {
+
+    }
+    #answer {
+
     }
   }
-}
-
-.button {
-  display: inline-block;
 }
