@@ -24,11 +24,17 @@ class App extends React.Component {
       categoryInfo: [],
       dailyDoubleOne: [],
       dailyDoubleTwo: [],
-      displayModal: false
+      displayModal: false,
+      doubleJeopardy: false
     }
     this.getNewCategory = this.getNewCategory.bind(this)
     this.displayModal = this.displayModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
+    this.doubleJeopardy = this.doubleJeopardy.bind(this)
+  }
+
+  doubleJeopardy() {
+    this.setState({doubleJeopardy: !this.state.doubleJeopardy})
   }
 
   displayModal() {
@@ -88,6 +94,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        <h1 onClick={this.doubleJeopardy}>
+          {this.state.doubleJeopardy ? 'DOUBLE JEOPARDY!' : 'JEOPARDY!'}
+        </h1>
         {this.state.categoryInfo.map((category, index) => {
           if (index === this.state.dailyDoubleOne[0]) {
             return <Category
