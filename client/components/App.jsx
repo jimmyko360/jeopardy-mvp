@@ -33,10 +33,6 @@ class App extends React.Component {
     this.doubleJeopardy = this.doubleJeopardy.bind(this)
   }
 
-  doubleJeopardy() {
-    this.setState({doubleJeopardy: !this.state.doubleJeopardy})
-  }
-
   displayModal() {
     this.setState({displayModal: true})
   }
@@ -60,37 +56,28 @@ class App extends React.Component {
   }
 
   getCategoryIds() {
-    axios.get('http://jservice.io/api/categories?count=5')
-    .then((categories) => {
-      let idArr = categories.data.map((category) => {
-        return category.id
-      })
-      this.setState({categoryIds: idArr})
-      return idArr
-    })
-    .then((ids) => {
-      let categoryInfo = ids.map((categoryId) => {
-        return axios.get(`http://jservice.io/api/category?id=${categoryId}`)
-      })
-      Promise.all(categoryInfo)
-      .then((categoryPromiseArray) => {
-        let categories = categoryPromiseArray.map((category) => {
-          return category.data
-        })
-        this.setState({categoryInfo: categories})
-      })
-      .catch((err) => {throw(err)})
-    })
-    .catch((err)=>{throw(err)})
+    for (let i = 0; i < 5; i++) {
+      this.getNewCategory(i);
+    }
   }
 
-  componentDidMount() {
+  getDailyDoubles() {
     this.setState({
       dailyDoubleOne: [Math.floor(Math.random() * (5 - 0)),
         Math.floor(Math.random() * (5 - 0))],
-        dailyDoubleTwo: [Math.floor(Math.random() * (5 - 0)),
-          Math.floor(Math.random() * (5 - 0))]
-        })
+      dailyDoubleTwo: [Math.floor(Math.random() * (5 - 0)),
+        Math.floor(Math.random() * (5 - 0))]
+    })
+  }
+
+  doubleJeopardy() {
+    this.setState({doubleJeopardy: !this.state.doubleJeopardy})
+    this.getDailyDoubles();
+    this.getCategoryIds();
+  }
+
+  componentDidMount() {
+    this.getDailyDoubles();
     this.getCategoryIds();
   }
 
