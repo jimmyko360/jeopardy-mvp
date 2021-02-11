@@ -24,7 +24,7 @@ class App extends React.Component {
       categoryInfo: [],
       dailyDoubleOne: [],
       dailyDoubleTwo: [],
-      displayModal: true
+      displayModal: false
     }
     this.getNewCategory = this.getNewCategory.bind(this)
     this.displayModal = this.displayModal.bind(this)
