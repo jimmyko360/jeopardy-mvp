@@ -49,6 +49,9 @@ class App extends React.Component {
     let newCategory = Math.floor(Math.random() * (18418 - 1)) + 1
     axios.get(`http://jservice.io/api/category?id=${newCategory}`)
     .then((category) => {
+      if ((this.state.doubleJeopardy && category.data.clues[0].value === 100) || (!this.state.doubleJeopardy && category.data.clues[0].value === 200)) {
+        this.getNewCategory(column);
+      }
       let state = this.state.categoryInfo.slice();
       state[column] = category.data
       this.setState({categoryInfo: state})
