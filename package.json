@@ -24,6 +24,7 @@
     "mongoose": "^5.11.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-modal": "^3.12.1",
     "sass": "^1.32.6"
   },
   "devDependencies": {
