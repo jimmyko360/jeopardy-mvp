@@ -19,7 +19,7 @@ class Question extends React.Component {
 
   showQuestion() {
     if (this.props.dailyDouble) {
-      console.log('Daily Double!')
+      this.props.displayModal();
     }
     this.setState({displayQuestion: !this.state.displayQuestion})
   }

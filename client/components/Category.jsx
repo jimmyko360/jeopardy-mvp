@@ -21,6 +21,7 @@ class Category extends React.Component {
             key={clue.id}
             clue={clue}
             dailyDouble={true}
+            displayModal={this.props.displayModal}
             />
           } else {
             return <Question

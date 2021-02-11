@@ -1,6 +1,20 @@
 import React from 'react';
 import Category from './Category.jsx'
 import axios from 'axios';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+Modal.setAppElement('#app');
 
 class App extends React.Component {
   constructor() {
@@ -9,9 +23,20 @@ class App extends React.Component {
       categoryIds: [],
       categoryInfo: [],
       dailyDoubleOne: [],
-      dailyDoubleTwo: []
+      dailyDoubleTwo: [],
+      displayModal: false
     }
     this.getNewCategory = this.getNewCategory.bind(this)
+    this.displayModal = this.displayModal.bind(this)
+    this.closeModal = this.closeModal.bind(this)
+  }
+
+  displayModal() {
+    this.setState({displayModal: true})
+  }
+
+  closeModal() {
+    this.setState({displayModal: false})
   }
 
   getNewCategory(column) {
@@ -67,6 +92,7 @@ class App extends React.Component {
           if (index === this.state.dailyDoubleOne[0]) {
             return <Category
             dailyDouble={this.state.dailyDoubleOne}
+            displayModal={this.displayModal}
             key={category.id}
             index={index}
             category={category}
@@ -75,6 +101,7 @@ class App extends React.Component {
           } else if (index === this.state.dailyDoubleTwo[0]) {
             return <Category
             dailyDouble={this.state.dailyDoubleTwo}
+            displayModal={this.displayModal}
             key={category.id}
             index={index}
             category={category}
@@ -91,6 +118,16 @@ class App extends React.Component {
           }
         })
         }
+        <Modal
+          isOpen={this.state.displayModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Daily Double Modal"
+        >
+          <button onClick={this.closeModal}>
+            Close Modal
+          </button>
+        </Modal>
       </div>
     )
   }
