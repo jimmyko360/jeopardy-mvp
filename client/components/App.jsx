@@ -47,10 +47,11 @@ class App extends React.Component {
     .then((category) => {
       if ((this.state.doubleJeopardy && category.data.clues[0].value === 100) || (!this.state.doubleJeopardy && category.data.clues[0].value === 200)) {
         this.getNewCategory(column);
+      } else {
+        let state = this.state.categoryInfo.slice();
+        state[column] = category.data
+        this.setState({categoryInfo: state})
       }
-      let state = this.state.categoryInfo.slice();
-      state[column] = category.data
-      this.setState({categoryInfo: state})
     })
     .catch((err) => {console.log(err)})
   }
