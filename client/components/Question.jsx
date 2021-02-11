@@ -18,6 +18,9 @@ class Question extends React.Component {
   }
 
   showQuestion() {
+    if (this.props.dailyDouble) {
+      console.log('Daily Double!')
+    }
     this.setState({displayQuestion: !this.state.displayQuestion})
   }
 
@@ -30,7 +33,6 @@ class Question extends React.Component {
         <div className="cell">
           <button className="show-hide material-icons md-24" onClick={this.hideClue}>highlight_off</button>
 
-
           {this.state.displayClue ?
             <div className="clue">
             <div id="question" onClick={this.showQuestion}>
@@ -42,11 +44,10 @@ class Question extends React.Component {
             <div id="answer">
               {this.state.displayAnswer ?
                 this.props.clue.answer.toUpperCase()
-
                 : null }
-                <button className="show-answer material-icons md-24" onClick={this.showAnswer}>check_circle_outline</button>
+              <button className="show-answer material-icons md-24" onClick={this.showAnswer}>check_circle_outline</button>
             </div>
-          </div>
+            </div>
           : null}
         </div>
     )

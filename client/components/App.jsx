@@ -7,7 +7,9 @@ class App extends React.Component {
     super()
     this.state = {
       categoryIds: [],
-      categoryInfo: []
+      categoryInfo: [],
+      dailyDoubleOne: [],
+      dailyDoubleTwo: []
     }
     this.getNewCategory = this.getNewCategory.bind(this)
   }
@@ -49,6 +51,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.setState({
+      dailyDoubleOne: [Math.floor(Math.random() * (5 - 0)),
+        Math.floor(Math.random() * (5 - 0))],
+        dailyDoubleTwo: [Math.floor(Math.random() * (5 - 0)),
+          Math.floor(Math.random() * (5 - 0))]
+        })
     this.getCategoryIds();
   }
 
@@ -56,13 +64,33 @@ class App extends React.Component {
     return (
       <div className="app">
         {this.state.categoryInfo.map((category, index) => {
-          return <Category
-          key={category.id}
-          index={index}
-          category={category}
-          getNewCategory={this.getNewCategory}
-          />
-        })}
+          if (index === this.state.dailyDoubleOne[0]) {
+            return <Category
+            dailyDouble={this.state.dailyDoubleOne}
+            key={category.id}
+            index={index}
+            category={category}
+            getNewCategory={this.getNewCategory}
+            />
+          } else if (index === this.state.dailyDoubleTwo[0]) {
+            return <Category
+            dailyDouble={this.state.dailyDoubleTwo}
+            key={category.id}
+            index={index}
+            category={category}
+            getNewCategory={this.getNewCategory}
+            />
+          } else {
+            return <Category
+            dailyDouble={[]}
+            key={category.id}
+            index={index}
+            category={category}
+            getNewCategory={this.getNewCategory}
+            />
+          }
+        })
+        }
       </div>
     )
   }
