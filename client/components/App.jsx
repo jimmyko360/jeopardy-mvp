@@ -5,12 +5,12 @@ import Modal from 'react-modal';
 
 const customStyles = {
   content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)'
   }
 };
 
@@ -24,7 +24,7 @@ class App extends React.Component {
       categoryInfo: [],
       dailyDoubleOne: [],
       dailyDoubleTwo: [],
-      displayModal: false
+      displayModal: true
     }
     this.getNewCategory = this.getNewCategory.bind(this)
     this.displayModal = this.displayModal.bind(this)
@@ -122,11 +122,13 @@ class App extends React.Component {
           isOpen={this.state.displayModal}
           onRequestClose={this.closeModal}
           style={customStyles}
+          shouldCloseOnOverlayClick={true}
+          className={'modal'}
           contentLabel="Daily Double Modal"
         >
-          <button onClick={this.closeModal}>
-            Close Modal
-          </button>
+          <h1 className="modal-text">
+            DAILY DOUBLE<br/>
+          </h1>
         </Modal>
       </div>
     )

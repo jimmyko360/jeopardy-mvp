@@ -1,0 +1,12 @@
+.modal {
+  display: grid;
+  margin: auto;
+  height: 800px;
+  width: 1100px;
+  color: white;
+  font-size: 100px;
+  border: 10px solid black;
+  background: rgb(0, 0, 201);
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
