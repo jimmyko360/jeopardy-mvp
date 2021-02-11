@@ -4,13 +4,20 @@ body {
   font-weight: bolder;
   font-stretch: semi-condensed;
   align-items: center;
-  // overflow: auto;
-  // white-space: nowrap;
 
   #app {
     display: grid;
     margin: auto;
     width: 1350px;
     border: 40px solid gray;
+    background-color: gray;
   }
+
+  h1 {
+    font-size: 80px;
+    border: 0px;
+    margin: 0px;
+    color: $jeopardyBlue;
+  }
+
 }
