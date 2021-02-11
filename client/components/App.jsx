@@ -84,9 +84,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1 onClick={this.doubleJeopardy}>
+        <h2 onClick={this.doubleJeopardy}>
           {this.state.doubleJeopardy ? 'DOUBLE JEOPARDY!' : 'JEOPARDY!'}
-        </h1>
+        </h2>
         {this.state.categoryInfo.map((category, index) => {
           if (index === this.state.dailyDoubleOne[0]) {
             return <Category
