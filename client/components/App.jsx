@@ -65,9 +65,9 @@ class App extends React.Component {
   getDailyDoubles() {
     this.setState({
       dailyDoubleOne: [Math.floor(Math.random() * (6 - 0)),
-        Math.floor(Math.random() * (6 - 0))],
+        Math.floor(Math.random() * (5 - 0))],
       dailyDoubleTwo: [Math.floor(Math.random() * (6 - 0)),
-        Math.floor(Math.random() * (6 - 0))]
+        Math.floor(Math.random() * (5 - 0))]
     })
   }
 
