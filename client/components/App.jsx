@@ -57,17 +57,17 @@ class App extends React.Component {
   }
 
   getCategoryIds() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       this.getNewCategory(i);
     }
   }
 
   getDailyDoubles() {
     this.setState({
-      dailyDoubleOne: [Math.floor(Math.random() * (5 - 0)),
-        Math.floor(Math.random() * (5 - 0))],
-      dailyDoubleTwo: [Math.floor(Math.random() * (5 - 0)),
-        Math.floor(Math.random() * (5 - 0))]
+      dailyDoubleOne: [Math.floor(Math.random() * (6 - 0)),
+        Math.floor(Math.random() * (6 - 0))],
+      dailyDoubleTwo: [Math.floor(Math.random() * (6 - 0)),
+        Math.floor(Math.random() * (6 - 0))]
     })
   }
 
